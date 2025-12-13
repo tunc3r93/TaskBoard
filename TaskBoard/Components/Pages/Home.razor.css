@@ -1,0 +1,31 @@
+.home-container {
+    padding: 20px;
+}
+
+.stat-card {
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #3f51b5;
+}
+
+@media (max-width: 768px) {
+    .stat-value {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-card {
+        padding: 15px;
+    }
+
+    .stat-value {
+        font-size: 1.2rem;
+    }
+}

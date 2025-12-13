@@ -1,6 +1,11 @@
-﻿<Router AppAssembly="typeof(Program).Assembly" NotFoundPage="typeof(Pages.NotFound)">
+﻿@using MudBlazor
+@using TaskBoard.Components
+
+<Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
-        <RouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)" />
-        <FocusOnNavigate RouteData="routeData" Selector="h1" />
+        <RouteView RouteData="@routeData" DefaultLayout="typeof(Layout.MainLayout)" />
     </Found>
+    <NotFound>
+        <p>Seite nicht gefunden!</p>
+    </NotFound>
 </Router>

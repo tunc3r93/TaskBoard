@@ -1,8 +1,12 @@
 using TaskBoard.Components; // Falls du eigene Komponenten hast
 using MudBlazor;
 using MudBlazor.Services;
+using TaskBoard.Services;
+using TaskBoard.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped<IKanbanService, KanbanService>();
 
 // Füge MudBlazor-Dienste hinzu
 builder.Services.AddMudServices();  // Hier fügen wir MudBlazor hinzu

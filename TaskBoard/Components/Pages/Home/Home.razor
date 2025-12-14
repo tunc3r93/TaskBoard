@@ -1,7 +1,5 @@
 ﻿@page "/"
 @using MudBlazor
-@using System.Linq
-@using System.Collections.Generic
 @inherits LayoutComponentBase
 
 <PageTitle>Kanban Taskboard</PageTitle>
@@ -16,7 +14,6 @@
                 </MudCardContent>
             </MudCard>
         </MudItem>
-
         <MudItem xs="12" sm="6" md="4">
             <MudCard Class="stat-card">
                 <MudCardContent>
@@ -25,7 +22,6 @@
                 </MudCardContent>
             </MudCard>
         </MudItem>
-
         <MudItem xs="12" sm="6" md="4">
             <MudCard Class="stat-card">
                 <MudCardContent>
@@ -36,11 +32,3 @@
         </MudItem>
     </MudGrid>
 </MudContainer>
-
-@code {
-    // Hier kannst du später Daten binden, um die Werte dynamisch zu setzen
-    // Beispiel:
-    private int offeneAufgaben = 12;
-    private int abgeschlosseneAufgaben = 35;
-    private int verzögerungen = 5;
-}

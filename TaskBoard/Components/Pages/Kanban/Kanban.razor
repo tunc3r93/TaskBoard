@@ -1,0 +1,40 @@
+@page "/kanban"
+@inherits KanbanBase
+
+<MudContainer MaxWidth="MaxWidth.False" Class="kanban-container">
+    <MudGrid Spacing="3">
+
+        @foreach (var column in Columns)
+        {
+            <MudItem xs="12" sm="6" md="3">
+                <MudPaper Class="kanban-column" Elevation="1">
+
+                    <MudText Typo="Typo.h6">@column.Title</MudText>
+
+                    <MudDropZone T="KanbanItem"
+                                 Items="column.Items"
+                                 ItemDropped="args => OnItemDropped(args, column.Status)">
+
+                        @foreach (var item in column.Items)
+                        {
+                            <MudDraggable T="KanbanItem" Item="item">
+                                <MudPaper Class="kanban-card"
+                                          OnClick="@(() => OpenEditDialog(item))"
+                                          Elevation="1">
+
+                                    <MudText>@item.Title</MudText>
+                                    <MudText Typo="Typo.caption">@item.Description</MudText>
+                                    <MudChip Size="Size.Small">@item.Priority</MudChip>
+
+                                </MudPaper>
+                            </MudDraggable>
+                        }
+
+                    </MudDropZone>
+
+                </MudPaper>
+            </MudItem>
+        }
+
+    </MudGrid>
+</MudContainer>
